@@ -12,11 +12,30 @@ class PrilagodbaApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Prilagodba sučelja'),
-        ),
-        body: const Center(
-          child: Text('Početni Flutter projekt'),
+        appBar: AppBar(title: const Text('Prilagodba sučelja')),
+        body: const Padding(
+          padding: EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Icon(Icons.palette_outlined, size: 48),
+              SizedBox(height: 16),
+              Text('Primjer prilagodbe sučelja', textAlign: TextAlign.center),
+              SizedBox(height: 8),
+              Text(
+                'Ovaj ekran uređujemo korak po korak.',
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 24),
+              Card(
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text('Ovo je kartica s primjerom sadržaja.'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
