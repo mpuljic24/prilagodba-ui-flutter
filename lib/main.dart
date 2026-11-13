@@ -9,8 +9,20 @@ class PrilagodbaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final boje = ColorScheme.fromSeed(seedColor: Colors.blue);
+
+    final tema = ThemeData(
+      colorScheme: boje,
+      appBarTheme: AppBarThemeData(
+        backgroundColor: boje.primary,
+        foregroundColor: boje.onPrimary,
+      ),
+      iconTheme: IconThemeData(color: boje.primary),
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: tema,
       home: Scaffold(
         appBar: AppBar(title: const Text('Prilagodba sučelja')),
         body: const Padding(
