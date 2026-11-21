@@ -4,12 +4,21 @@ void main() {
   runApp(const PrilagodbaApp());
 }
 
-class PrilagodbaApp extends StatelessWidget {
+class PrilagodbaApp extends StatefulWidget {
   const PrilagodbaApp({super.key});
 
   @override
+  State<PrilagodbaApp> createState() => _PrilagodbaAppState();
+}
+
+class _PrilagodbaAppState extends State<PrilagodbaApp> {
+  bool zelenaTema = false;
+
+  @override
   Widget build(BuildContext context) {
-    final boje = ColorScheme.fromSeed(seedColor: Colors.blue);
+    final boje = ColorScheme.fromSeed(
+      seedColor: zelenaTema ? Colors.green : Colors.blue,
+    );
 
     final tema = ThemeData(
       colorScheme: boje,
@@ -64,6 +73,15 @@ class PrilagodbaApp extends StatelessWidget {
                   padding: EdgeInsets.all(24),
                   child: Text('Ovo je kartica s primjerom sadržaja.'),
                 ),
+              ),
+              const SizedBox(height: 24),
+              FilledButton(
+                onPressed: () {
+                  setState(() {
+                    zelenaTema = !zelenaTema;
+                  });
+                },
+                child: const Text('Promijeni boju'),
               ),
             ],
           ),
