@@ -17,11 +17,22 @@ class PrilagodbaApp extends StatelessWidget {
         headlineSmall: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
         bodyMedium: TextStyle(fontSize: 16, height: 1.5),
       ),
+
       appBarTheme: AppBarThemeData(
         backgroundColor: boje.primary,
         foregroundColor: boje.onPrimary,
       ),
       iconTheme: IconThemeData(color: boje.primary),
+
+      cardTheme: CardThemeData(
+        color: boje.primaryContainer,
+        elevation: 0,
+        margin: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide(color: boje.outline),
+        ),
+      ),
     );
 
     return MaterialApp(
@@ -50,7 +61,7 @@ class PrilagodbaApp extends StatelessWidget {
               const SizedBox(height: 24),
               const Card(
                 child: Padding(
-                  padding: EdgeInsets.all(16),
+                  padding: EdgeInsets.all(24),
                   child: Text('Ovo je kartica s primjerom sadržaja.'),
                 ),
               ),
